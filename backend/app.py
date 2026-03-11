@@ -12,7 +12,7 @@ UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Change path if different
-pytesseract.pytesseract.tesseract_cmd = r"C:/Users/padit/AppData/Local/Programs/Tesseract-OCR/tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = r"C:<PATH>/Tesseract-OCR/tesseract.exe"
 
 @app.route("/upload", methods=["POST"])
 def upload():
