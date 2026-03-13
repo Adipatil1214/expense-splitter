@@ -1,15 +1,17 @@
 import { useState } from "react";
 import axios from "axios";
-import Admin from "./admin.jsx"
+import Admin from "./Admin.jsx";
 
 function App() {
   const [file, setFile] = useState(null);
+  const [userId, setUserId] = useState("");
   const [result, setResult] = useState(null);
   const [showAdmin, setShowAdmin] = useState(false);
 
   const handleUpload = async () => {
     const formData = new FormData();
     formData.append("receipt", file);
+    formData.append("user_id", userId);
 
     const res = await axios.post(
       "http://localhost:5000/upload",
@@ -31,6 +33,18 @@ function App() {
 
       {!showAdmin ? (
         <div>
+
+          {/* USER ID INPUT */}
+          <input
+            type="text"
+            placeholder="Enter User ID"
+            value={userId}
+            onChange={(e) => setUserId(e.target.value)}
+          />
+
+          <br /><br />
+
+          {/* FILE INPUT */}
           <input
             type="file"
             onChange={(e) => setFile(e.target.files[0])}

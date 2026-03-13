@@ -1,16 +1,9 @@
 import sqlite3
 
-conn = sqlite3.connect("database.db")
+conn = sqlite3.connect("backend/database.db")
 cursor = conn.cursor()
 
-vendor_name = "BER GHOTEL"
-
-# cursor.execute("INSERT INTO vendor (vendor_name) VALUES (?)", (vendor_name,))
-# # cursor.execute("INSERT INTO vendor (status) VALUES (?)", ())
-cursor.execute("INSERT INTO vendor (vendor_name , status) VALUES (?,?)",(vendor_name , "APPROVED"))
-# cursor.execute("DELETE FROM vendor")
-conn.commit()
-
-print("Vendor added successfully!")
+cursor.execute("PRAGMA table_info(receipt)")
+print(cursor.fetchall())
 
 conn.close()
