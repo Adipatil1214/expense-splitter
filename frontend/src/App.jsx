@@ -57,6 +57,7 @@ function App() {
           {result && (
             <div>
               <h3>Vendor: {result.vendor}</h3>
+              <h3>Amount: {result.amount}</h3>
               <h3>Status: {result.status}</h3>
             </div>
           )}
