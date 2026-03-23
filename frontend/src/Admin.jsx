@@ -73,6 +73,7 @@ function Admin() {
             <th>Vendor</th>
             <th>Status</th>
             <th>Amount</th>
+            <th>Date</th>
             <th>Actions</th>
             <th>View Receipt</th>
           </tr>
@@ -86,6 +87,7 @@ function Admin() {
               <td>{r.vendor_name}</td>
               <td>{r.status}</td>
               <td>{r.amount ? `₹${r.amount}` : "Not detected"}</td>
+              <td>{r.receipt_date}</td>
 
               {/* Actions */}
               <td>
